@@ -1,0 +1,20 @@
+.contentView{
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-l);
+  min-width: 300px;
+  .from{
+    background: var(--foreground);
+    color: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--padding-s);
+  }
+  .title{
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--padding-m) 0;
+    &:after{
+      content: ":";
+    }
+  }
+}

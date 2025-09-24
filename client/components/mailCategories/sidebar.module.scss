@@ -1,0 +1,23 @@
+.sidebar{
+  max-width: 100px;
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--padding-l);
+  background: var(--foreground);
+  color: var(--background);
+  @media (max-width: 768px) {
+    padding: var(--padding-l) var(--padding-s);
+  }
+  nav{
+    content-visibility: auto;
+    display: flex;
+    flex-direction: column;
+    a{
+      margin: var(--padding-l);
+      border-bottom: 1px solid transparent;
+      &.active{
+        border-bottom: 1px solid var(--background);
+      }
+    }
+  }
+}

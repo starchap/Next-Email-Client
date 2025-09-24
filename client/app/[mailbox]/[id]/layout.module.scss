@@ -1,0 +1,11 @@
+.layout{
+  width: 100%;
+
+  .mailbox{
+    color: var(--background);
+    text-transform: capitalize;
+    &:after{
+      content: ":";
+    }
+  }
+}

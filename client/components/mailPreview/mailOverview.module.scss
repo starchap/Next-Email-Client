@@ -1,0 +1,82 @@
+.mailOverview {
+  --width: 300px;
+  min-width: 200px;
+  max-width: var(--width);
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--padding-l);
+  background: var(--foreground);
+  color: var(--background);
+  max-height: 100vh;
+  overflow-x: auto;
+  @media (max-width: 768px) {
+    padding: var(--padding-l) var(--padding-s);
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+  }
+  .numOfMessages{
+    padding: var(--padding-l) 0;
+  }
+
+  .mailPreview{
+    content-visibility: auto;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    flex-direction: column;
+    grid-column-gap: var(--padding-m);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    padding: var(--padding-l);
+    transition: background 50ms ease-in-out;
+    &.active,
+    &:hover{
+      background: var(--button-hover);
+    }
+    p,pre,h3{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .title,
+    .contentPreview{
+      font-size: var(--font-size-m);
+    }
+    .sender{
+      font-size: var(--font-size-s);
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    .title{
+      font-weight: bold;
+      grid-area: 2 / 2 / 3 / 3;
+    }
+    .contentPreview{
+      grid-area: 3 / 2 / 4 / 3;
+    }
+    .avatar{
+      grid-area: 1 / 1 / 4 / 2;
+      border-radius: 50%;
+      overflow: hidden;
+      height: 50px;
+      width: 50px;
+      border: 1px solid var(--border-color);
+      background-color: var(--delete);
+    }
+    @media (max-width: 768px) {
+      .avatar{
+        height: 25px;
+        width: 25px;
+      }
+    }
+    @media (max-width: 600px) {
+      .avatar{
+        visibility: hidden;
+        width: 0;
+      }
+    }
+  }
+}
